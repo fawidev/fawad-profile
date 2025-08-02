@@ -1,5 +1,11 @@
 ---
 import Section from "./Section.astro";
+import type { SkillCategory, SkillItem } from "../types";
+
+interface Props {
+  description: string;
+  categories: SkillCategory[];
+}
 
 const { description, categories } = Astro.props;
 ---
@@ -10,11 +16,11 @@ const { description, categories } = Astro.props;
   </p>
   
   <div class="grid gap-8 md:gap-12">
-    {categories.map((category) => (
+    {categories.map((category: SkillCategory) => (
       <div class="skill-category">
         <h3 class="mb-6 text-xl font-semibold text-white">{category.title}</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {category.items.map((skill, index) => (
+          {category.items.map((skill: SkillItem, index: number) => (
             <div 
               class="skill-item flex flex-col items-center p-4 rounded-lg bg-white/10 hover:bg-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm border border-white/20"
               style={`animation-delay: ${index * 0.1}s`}

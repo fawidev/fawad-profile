@@ -1,6 +1,11 @@
 ---
 import Section from "./Section.astro";
 
+interface Props {
+  email: string;
+  socialLinks: { text: string; href: string }[];
+}
+
 const { email, socialLinks } = Astro.props;
 ---
 
@@ -40,7 +45,7 @@ const { email, socialLinks } = Astro.props;
     </div>
     
     <div class="flex justify-center space-x-6">
-      {socialLinks.map((link) => (
+      {socialLinks.map((link: { text: string; href: string }) => (
         <a 
           href={link.href}
           target="_blank"
