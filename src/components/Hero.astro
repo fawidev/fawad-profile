@@ -2,26 +2,107 @@
 import type { HeroProps } from "@types";
 type Props = HeroProps;
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialty, summary, email, tagline } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
+<section class="py-24 md:py-32" id="hero">
+  
   <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
+    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl hero-name text-center"
   >
     {name}
   </h1>
+  
   <p
-    class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+    class="mb-6 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl hero-specialty text-center"
   >
     {specialty}
   </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+  
+  <p class="mb-4 text-lg italic text-primary-light text-center hero-tagline">
+    {tagline}
+  </p>
+  
+  <p class="mb-12 text-base font-normal text-neutral md:text-lg max-w-4xl mx-auto text-center hero-summary">
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <a
+      class="inline-block rounded-full bg-primary px-8 py-4 text-sm leading-5 font-medium text-white hover:bg-primary-light hover:scale-105 transition-all duration-300 hero-cta shadow-lg"
+      href={`mailto:${email}`}>
+      Let's Work Together
+    </a>
+    <a
+      class="inline-block rounded-full border-2 border-primary text-primary px-8 py-4 text-sm leading-5 font-medium hover:bg-primary hover:text-white transition-all duration-300 hero-cta-secondary"
+      href="#journey">
+      View My Journey
+    </a>
+  </div>
 </section>
+
+<style>
+  .hero-name {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  }
+  
+  .hero-specialty {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+  
+  .hero-tagline {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  }
+  
+  .hero-summary {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  }
+  
+  .hero-cta, .hero-cta-secondary {
+    opacity: 0;
+    animation: bounceIn 0.8s ease-out 1.0s forwards;
+  }
+  
+  .hero-cta:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(32, 178, 170, 0.4);
+  }
+  
+  .hero-cta-secondary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(32, 178, 170, 0.2);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

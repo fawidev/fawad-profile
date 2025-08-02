@@ -1,0 +1,78 @@
+---
+import Section from "./Section.astro";
+
+const { description, categories } = Astro.props;
+---
+
+<Section text="Technical Expertise" href="expertise">
+  <p class="mb-8 text-lg text-neutral leading-relaxed">
+    {description}
+  </p>
+  
+  <div class="grid gap-8 md:gap-12">
+    {categories.map((category) => (
+      <div class="skill-category">
+        <h3 class="mb-6 text-xl font-semibold text-white">{category.title}</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {category.items.map((skill, index) => (
+            <div 
+              class="skill-item flex flex-col items-center p-4 rounded-lg bg-white/10 hover:bg-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm border border-white/20"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <img 
+                src={skill.logo} 
+                alt={skill.name}
+                class="w-12 h-12 mb-3 object-contain skill-logo"
+                loading="lazy"
+              />
+              <span class="text-sm text-center text-white font-medium">{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
+
+<style>
+  .skill-category {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .skill-item:hover .skill-logo {
+    transform: rotate(5deg) scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-logo {
+    transition: transform 0.3s ease;
+    filter: brightness(0.9);
+  }
+  
+  .skill-item:hover .skill-logo {
+    filter: brightness(1.1);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .skill-category:nth-child(1) { animation-delay: 0.1s; }
+  .skill-category:nth-child(2) { animation-delay: 0.2s; }
+  .skill-category:nth-child(3) { animation-delay: 0.3s; }
+  .skill-category:nth-child(4) { animation-delay: 0.4s; }
+</style>
