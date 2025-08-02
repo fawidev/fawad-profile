@@ -1,12 +1,12 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Fawad Ahsen — Senior Full Stack Developer - Elixir",
+  author: "Fawad Ahsen",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "A Senior Full Stack Developer with a passion for Elixir and Phoenix.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/fawad-small.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
@@ -103,7 +103,7 @@ export const SITE_CONTENT: SiteContent = {
 
       Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/fawad-profile.jpeg",
   },
 };
 
