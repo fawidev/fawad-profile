@@ -1,13 +1,42 @@
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #00343C 0%, #002A30 100%);
+  min-height: 100vh;
+}
+
+/* Custom hover effects */
+.hover-accent:hover {
+  background-color: #20B2AA !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+/* Selection color */
+::selection {
+  background-color: #20B2AA;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #20B2AA;
+  color: #ffffff;
+}
+
 @theme {
   --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;
 
-  --color-primary: #2563eb;
-  --color-neutral: #94a3b8;
-  --color-white: #e2e8f0;
-  --color-black: #0e141b;
+  --color-primary: #20B2AA;
+  --color-primary-light: #40E0D0;
+  --color-primary-dark: #008B8B;
+  --color-neutral: #B8C5D1;
+  --color-white: #ffffff;
+  --color-black: #00343C;
 
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;
@@ -41,6 +70,9 @@
   --tracking-tight: -0.25px;
 
   --animate-slide-in: slide-in 600ms ease both;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out both;
+  --animate-bounce-in: bounceIn 0.8s ease-out both;
+  --animate-pulse: pulse 2s infinite;
 
   @keyframes slide-in {
     10% {
@@ -48,6 +80,44 @@
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
     }
   }
 }

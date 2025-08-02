@@ -6,12 +6,12 @@ interface Props {
   experience: ExperienceProps[];
 }
 
-const { experience } = Astro.props;
+const { journey } = Astro.props;
 ---
 
-<Section text="Work Experience" href="experience">
+<Section text="My Journey" href="journey">
   {
-    experience.map(({ company, position, startDate, endDate, summary }) => (
+    journey.map(({ company, position, startDate, endDate, summary }) => (
       <div class="mb-10">
         <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
           {company}
