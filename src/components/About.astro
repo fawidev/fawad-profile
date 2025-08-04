@@ -12,13 +12,13 @@ const { description, image, name } = Astro.props;
   <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
     <p class="w-auto text-base text-neutral md:pr-5">{description}</p>
     <div
-      class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]"
+      class="h-80 w-64 flex-shrink-0 rotate-[5deg] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-primary/20 transition-transform duration-300 hover:rotate-0 hover:scale-105 md:rotate-[7deg]"
     >
       <Image
-        class="object-cover"
+        class="h-full w-full object-cover"
         src={image}
         width="260"
-        height="260"
+        height="320"
         alt={name}
       />
     </div>
