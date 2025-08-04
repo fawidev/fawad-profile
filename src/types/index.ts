@@ -13,6 +13,7 @@ export interface SiteContent {
   journey: ExperienceProps[];
   projects: ProjectProps[];
   expertise: ExpertiseProps;
+  workstyle: WorkStyleProps;
   about: AboutProps;
 }
 
@@ -58,6 +59,19 @@ export interface SkillCategory {
 export interface SkillItem {
   name: string;
   logo: string;
+}
+
+export interface WorkStyleProps {
+  title: string;
+  description: string;
+  image: string;
+  highlights: WorkHighlight[];
+}
+
+export interface WorkHighlight {
+  icon: string;
+  title: string;
+  description: string;
 }
 
 export interface HeaderProps {

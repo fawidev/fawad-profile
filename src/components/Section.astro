@@ -5,13 +5,90 @@ interface Props {
 }
 
 const { text, href } = Astro.props;
+
+// Define section-specific icons and themes
+const sectionThemes: Record<string, { icon: string; gradient: string; accent: string }> = {
+  about: { icon: "👨‍💻", gradient: "from-blue-500/10 to-purple-500/10", accent: "border-blue-500/20" },
+  journey: { icon: "🚀", gradient: "from-green-500/10 to-emerald-500/10", accent: "border-green-500/20" },
+  expertise: { icon: "⚡", gradient: "from-yellow-500/10 to-orange-500/10", accent: "border-yellow-500/20" },
+  workstyle: { icon: "🌍", gradient: "from-primary/10 to-primary-light/10", accent: "border-primary/20" },
+  projects: { icon: "🛠️", gradient: "from-purple-500/10 to-pink-500/10", accent: "border-purple-500/20" },
+  contact: { icon: "📬", gradient: "from-red-500/10 to-rose-500/10", accent: "border-red-500/20" }
+};
+
+const theme = sectionThemes[href] || sectionThemes.about;
 ---
 
-<section id={href} class="py-24">
-  <h2
-    class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl"
-  >
-    {text}
-  </h2>
-  <slot />
+<section id={href} class="py-24 relative overflow-hidden">
+  <!-- Section background decoration -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b ${theme.gradient} opacity-50`}></div>
+    <div class="absolute top-10 right-10 text-6xl opacity-10 select-none">{theme.icon}</div>
+    <div class="absolute bottom-10 left-10 text-4xl opacity-5 select-none">{theme.icon}</div>
+  </div>
+  
+  <div class="relative z-10">
+    <div class="flex items-center gap-4 mb-14">
+      <div class={`flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${theme.gradient} border ${theme.accent} backdrop-blur-sm section-icon-container`}>
+        <span class="text-2xl section-icon">{theme.icon}</span>
+      </div>
+      <div>
+        <h2 class="font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl section-title">
+          {text}
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-primary-light rounded-full mt-2 section-underline"></div>
+      </div>
+    </div>
+    <slot />
+  </div>
 </section>
+
+<style>
+  .section-icon-container {
+    animation: sectionIconFloat 3s ease-in-out infinite;
+  }
+  
+  .section-icon {
+    animation: sectionIconPulse 2s ease-in-out infinite;
+  }
+  
+  .section-title {
+    opacity: 0;
+    animation: slideInFromLeft 0.8s ease-out 0.2s forwards;
+  }
+  
+  .section-underline {
+    width: 0;
+    animation: expandWidth 1s ease-out 0.8s forwards;
+  }
+  
+  @keyframes sectionIconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  @keyframes sectionIconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes expandWidth {
+    from {
+      width: 0;
+    }
+    to {
+      width: 6rem;
+    }
+  }
+</style>

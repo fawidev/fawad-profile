@@ -6,17 +6,18 @@ export const SITE_CONFIG: SiteConfig = {
   description:
     "Senior Elixir Engineer with 5+ years building scalable systems. Open to new opportunities and consulting projects.",
   lang: "en",
-  siteLogo: "/fawad-small.jpg",
+  siteLogo: "/fawad-profile-small.jpeg",
   navLinks: [
     { text: "About", href: "#about" },
     { text: "Journey", href: "#journey" },
     { text: "Expertise", href: "#expertise" },
+    { text: "How I Work", href: "#workstyle" },
     { text: "Projects", href: "#projects" },
     { text: "Contact", href: "#contact" },
   ],
   socialLinks: [
     { text: "LinkedIn", href: "https://www.linkedin.com/in/fawadahsen156/" },
-    { text: "GitHub", href: "https://github.com/fawadev" },
+    { text: "GitHub", href: "https://github.com/fawidev" },
     { text: "Email", href: "mailto:fawad.ahsan22@gmail.com" },
     { text: "WhatsApp", href: "https://wa.me/923344143936" },
   ],
@@ -79,41 +80,39 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      // linkSource: "https://github.com/immois/astro-zen", // Template reference
-      image: "/spotifu.png",
+      name: "Appwork Technologies",
+      summary: "Leading Elixir/Phoenix development for property maintenance platform serving thousands of users. Built fault-tolerant systems using GenServers and OTP supervision trees.",
+      linkPreview: "https://appworkco.com/",
+      image: "/Appwork-project.png", // We'll need to add this logo
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      // linkSource: "https://github.com/immois/astro-zen", // Template reference
-      image: "/shopify-clon.png",
+      name: "Picsello",
+      summary: "Developed feature-rich LiveView applications, including booking systems, business email automation with SendGrid, external calendar integration via Nylas, and bulk image uploads with multi-zip support using GCP.",
+      linkPreview: "https://www.picsello.com/",
+      image: "/Picsello-Project.png",
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      // linkSource: "https://github.com/immois/astro-zen", // Template reference
-      image: "/clone-ig.png",
+      name: "SafeBoda",
+      summary: "Contributed to Safeboda's migration from a legacy PHP codebase to scalable Elixir microservices, leading the development of services for the ride lifecycle, user authentication, and extending into the fintech domain.",
+      linkPreview: "https://www.safeboda.com/",
+      image: "/SafeBoda-project.png",
     },
   ],
   expertise: {
     description: "My expertise centers around building resilient, concurrent systems with Elixir. Here's my technical toolkit:",
     categories: [
       {
-        title: "Core Elixir Ecosystem",
+        title: "Backend",
         items: [
           { name: "Elixir", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" },
           { name: "Phoenix", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phoenix/phoenix-original.svg" },
           { name: "Phoenix LiveView", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phoenix/phoenix-original.svg" },
-          { name: "OTP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" },
-          { name: "GenServers", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" },
-          { name: "Supervisors", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" },
-          { name: "Oban", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" },
-          { name: "Ecto", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg" }
+          { name: "OTP", logo: "https://www.vectorlogo.zone/logos/erlang/erlang-icon.svg" },
+          { name: "GenServers", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg" },
+          { name: "Supervisors", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original-wordmark.svg" },
+          { name: "Ecto", logo: "https://hexdocs.pm/ecto/assets/logo.png" },
+          { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+          { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }
         ]
       },
       {
@@ -129,12 +128,14 @@ export const SITE_CONTENT: SiteContent = {
       {
         title: "Cloud & DevOps",
         items: [
-          { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+          { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+          { name: "AWS Lambda", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
           { name: "GCP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
           { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
           { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
           { name: "RabbitMQ", logo: "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" },
-          { name: "Kafka", logo: "https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" }
+          { name: "Kafka", logo: "https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" },
+          { name: "Oban", logo: "https://raw.githubusercontent.com/sorentwo/oban/main/assets/oban-logo.svg" }
         ]
       },
       {
@@ -147,6 +148,43 @@ export const SITE_CONTENT: SiteContent = {
           { name: "REST APIs", logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
           { name: "Websockets", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phoenix/phoenix-original.svg" }
         ]
+      }
+    ]
+  },
+  workstyle: {
+    title: "How I Work Remotely",
+    description: "Working remotely for 5+ years has taught me that success isn't about where you work—it's about how you work. I've mastered the art of building meaningful relationships, delivering exceptional results, and creating seamless collaboration experiences across time zones. My approach combines technical excellence with genuine care for client satisfaction.",
+    image: "/fawad-work.jpeg",
+    highlights: [
+      {
+        icon: "🎯",
+        title: "Client-First Mindset", 
+        description: "Your success is my success. I go beyond coding to understand your business goals and deliver solutions that create real value."
+      },
+      {
+        icon: "💬",
+        title: "Crystal Clear Communication",
+        description: "Daily updates, transparent progress tracking, and proactive communication. You'll always know where your project stands."
+      },
+      {
+        icon: "⚡", 
+        title: "Rapid Response Time",
+        description: "Average response time under 2 hours during business hours. Urgent issues? I'm available for immediate consultation."
+      },
+      {
+        icon: "🔄",
+        title: "Agile Collaboration",
+        description: "Weekly demos, iterative feedback loops, and flexible adaptations. Your input shapes every development cycle."
+      },
+      {
+        icon: "🛡️",
+        title: "Quality Assurance",
+        description: "Comprehensive testing, code reviews, and documentation. Every deliverable meets enterprise-grade standards."
+      },
+      {
+        icon: "🌍",
+        title: "Global Perspective",
+        description: "Experience working with teams across US, Europe, and Africa. I understand diverse working styles and cultural nuances."
       }
     ]
   },
