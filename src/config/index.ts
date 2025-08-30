@@ -21,7 +21,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Email", href: "mailto:fawad.ahsan22@gmail.com" },
     { text: "WhatsApp", href: "https://wa.me/923344143936" },
   ],
-  socialImage: "/zen-og.png",
+  socialImage: "",
   canonicalURL: "https://ifawi.com",
 };
 
@@ -60,8 +60,8 @@ export const SITE_CONTENT: SiteContent = {
     {
       company: "SafeBoda - Uganda (Ride-hailing App)",
       position: "Senior Backend Developer - Elixir",
-      startDate: "April 2020",
-      endDate: "Sept 2021",
+      startDate: "Sept 2021",
+      endDate: "Nov 2021",
       summary: [
         "Contributed to Safeboda’s migration from a legacy PHP codebase to scalable Elixir microservices, leading the development of services for the ride lifecycle, user authentication, and later extending into the fintech domain.",
         "Built interactive tools with Phoenix LiveView, GraphQL, REST APIs, and JavaScript Hooks to enhance civic engagement workflows."

@@ -228,7 +228,6 @@ const { name, specialty, summary, email, tagline } = Astro.props;
       }
       
       const snippet = codeSnippets[currentIndex];
-      console.log('Updating to:', snippet.code); // Debug log
       
       // Add fade out
       codeElement.style.opacity = '0.3';
@@ -244,7 +243,6 @@ const { name, specialty, summary, email, tagline } = Astro.props;
     
     // Start rotation after a delay
     setTimeout(() => {
-      console.log('Starting code rotation'); // Debug log
       updateCode(); // Show first one immediately
       setInterval(updateCode, 5000); // Change every 5 seconds
     }, 4000);
